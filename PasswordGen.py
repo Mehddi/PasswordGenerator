@@ -6,7 +6,13 @@ majAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 password = ''
 listeCharSpeciaux = '!@#$%^&*()-_=+[]|;:,.<>?/~`'
 
-carNumber = int(input('Combien de caractères souhaitez vous dans votre mot de passe ?'))
+while True:
+    try:
+        carNumber = int(input('Combien de caractères souhaitez vous dans votre mot de passe ?'))
+        break #Sortie de la boucle si l'entrée est valide
+    except ValueError:
+        print('Erreur : Veuillez entrer un nombre entier') #entrée non valide
+
 for i in range (carNumber):
     newChar = ''
     carType = random.randint(1,3) #Choix du type de char, 1=lettre, 2=chiffre, 3=characteres speciaux
